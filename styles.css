@@ -167,6 +167,9 @@ body{
 .grayish{
     color:var(--Dark-Grayish-Magenta);
 }
+.purple-rate{
+    color:var(--Very-Dark-Magenta);
+}
 @media screen and (min-width:768px) {
     .wrapper{
         display: grid;
@@ -184,9 +187,10 @@ body{
     .title-content{
         text-align: start;
     }
-    .purple-title{
-        font-size:36px;
+    .title-content>h1{
+        font-size:32px;
     }
+
 }
 @media screen and (min-width:900px) {
     .cards{
@@ -205,9 +209,7 @@ body{
     .card-3{
         grid-area:card-3;
     }
-    .purple-title{
-        font-size:42px;
-    }
+
     .title-content{
         text-align: start;
     }
@@ -242,13 +244,11 @@ body{
         justify-content:center;
         align-items: space-around;
     }
-
-    .purple-title{
-        font-size:48px;
+    .title-content>h1{
+        font-size:64px;
     }
     .rate>img{
         width:24px;
-        
     }
     .rate-1{
         position: relative;
