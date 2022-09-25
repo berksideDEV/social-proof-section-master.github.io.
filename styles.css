@@ -1,0 +1,276 @@
+/*RESET CSS*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*Custom CSS*/
+:root{
+--Very-Dark-Magenta: hsl(300, 43%, 22%);
+--Soft-Pink: hsl(333, 80%, 67%);
+--Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+--Light-Grayish-Magenta: hsl(300, 24%, 96%);
+--White: hsl(0, 0%, 100%)
+}
+body{
+    font-family: 'Fraunces', serif;
+    font-family: 'Orbitron', sans-serif;
+    font-size:15px;
+    width:90%;
+    margin:5rem auto;
+    height:100vh;
+}
+.wrapper{
+    height:100vh;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:20px;
+}
+.title-content{
+    align-self: center;
+    text-align: center;
+}
+.title-content>h1{
+    font-size:32px;
+}
+.m-top{
+    margin-top:1rem;
+}
+.rated-content{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.rate{
+    margin: 0.5rem auto;
+    text-align: center;
+    background-color:var(--Light-Grayish-Magenta);
+    border-radius: 10px;
+    width:100%;
+    padding:1rem;
+    gap:10px;
+}
+.rate>img{
+    display:inline;
+    width:24px;
+}
+.bottom-content{
+    padding-bottom:5rem;
+}
+.cards{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    margin-top:1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:2rem;
+    background-color: var(--Very-Dark-Magenta);
+}
+.card>img{    
+    border-radius: 50%;
+    width:48px;
+}
+.img-title{
+    padding-left:1rem;
+}
+.box-decleration{
+    margin-top:1rem;
+    color:var(--Light-Grayish-Magenta);
+}
+.white{
+    color: var(--White);
+}
+.purple{
+    color:var(--Soft-Pink)
+}
+.purple-title{
+    color:var(--Very-Dark-Magenta);
+}
+.grayish{
+    color:var(--Dark-Grayish-Magenta);
+}
+@media screen and (min-width:768px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .bottom-content{
+        display:grid;
+        grid-column: 1/-1;
+        margin-top: 1rem;
+    }
+    .card{
+        margin-top: 1rem;
+        
+    }
+    .title-content{
+        text-align: start;
+    }
+    .purple-title{
+        font-size:36px;
+    }
+}
+@media screen and (min-width:900px) {
+    .cards{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "card-1 card-2 card-3";
+        gap:10px;
+    }
+    .card-1{
+        grid-area: card-1;
+    }
+    .card-2{
+        grid-area: card-2;
+    }
+    .card-3{
+        grid-area:card-3;
+    }
+    .purple-title{
+        font-size:42px;
+    }
+    .title-content{
+        text-align: start;
+    }
+    .rated-content{
+        display: flex;
+        justify-content: center;
+        justify-self: flex-end;
+        max-width: 512px;
+    }
+    .rate{
+        display: flex;
+        justify-content: space-evenly;  
+        align-items:center;
+        font-size:13px;
+        text-align: center;
+
+    }
+    .rate>img{
+        padding:0.1rem;
+        width:24px;
+    }
+}
+@media screen and (min-width:1440px){
+    .wrapper{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    .rated-content{
+        grid-column:3/-1;
+        width:500px;
+        display:flex;
+        justify-content:center;
+        align-items: space-around;
+    }
+
+    .purple-title{
+        font-size:48px;
+    }
+    .rate>img{
+        width:24px;
+        
+    }
+    .rate-1{
+        position: relative;
+        right:6rem;
+    }
+    .rate-2{
+        position:relative;
+        right:3rem;
+    }
+    .title-content{
+        text-align: start;
+    }
+    .card-2{
+        position: relative;
+        top:2rem;
+    }
+    .card-3{
+        position: relative;
+        top:4rem;
+    }
+    .cards{
+        gap:30px;
+    }
+
+}
